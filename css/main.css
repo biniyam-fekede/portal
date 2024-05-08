@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 html {
-    background-color: lightgray;
+    background-color: #f0f0f0; /* Updated background color */
     font-family: 'Quicksand', sans-serif;
     font-size: 0.95em;
     line-height: 1.5em;
@@ -20,7 +20,11 @@ h1 {
     background: #fff;
     line-height: 2.5em;
 }
-
+h1.page-header{
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 main.wrapper {
     background-color: white;
     overflow: auto;
@@ -37,7 +41,7 @@ h2,h3 {
 }
 
 a {
-    color:darkcyan;
+    color: darkcyan;
     text-decoration: none;
 }
 
@@ -72,7 +76,6 @@ footer {
         float: left;
         margin-right: 2em;
     }
-    
 }
 
 /* TABLET */
@@ -88,12 +91,11 @@ footer {
     }
     
     picture.profile img {
-        width: 100%;
-        display: block;
-        margin: 0 auto; /* Center the image */
+        width: 100px; /* Fixed width for better control */
+        height: 100px; /* Fixed height to match width */
+        display:inline-block
+        margin: auto; /* Center the image */
     }
-    
-
 }
 
 /* PHONE */
@@ -108,7 +110,24 @@ footer {
     }
     
     picture.profile img {
-        width: 100%;
+        width: 100%; /* Adjust to full width on small screens */
+        height: auto; /* Maintain aspect ratio */
     }
-    
+}
+.content {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+    justify-content: space-around; /* Spacing between the items */
+    margin-top: 20px; /* Optional: adds some space on the top */
+}
+
+.content .text-block {
+    flex: 1;
+    padding: 0 20px; /* Adds padding around the text */
+}
+
+.content .profile img {
+    max-width: 40%; /* Adjusts the width of the image */
+    height: auto;
+    border-radius: 10px;
 }
