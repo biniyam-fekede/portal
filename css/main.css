@@ -88,10 +88,11 @@ footer {
     }
     
     picture.profile img {
-        width: 50%;
-        float: right;
-        margin-left: 1em;
+        width: 100%;
+        display: block;
+        margin: 0 auto; /* Center the image */
     }
+    
 
 }
 
