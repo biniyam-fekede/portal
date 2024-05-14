@@ -4,64 +4,13 @@
     <title>Biniyam Gebreyohannes - Software Engineer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/forms.css" />
-    <style>
-      :root {
-        --primary-color: #4a90e2;
-        --secondary-color: #ffffff;
-        --text-color: #333333;
-        --background-color: #e0e0e0;
-      }
-
-      body {
-        background-color: var(--background-color);
-        color: var(--text-color);
-        font-family: "Roboto", sans-serif;
-      }
-
-      .topnav a.active,
-      .topnav a:hover {
-        background-color: var(--primary-color);
-        color: white;
-      }
-      footer {
-        background-color: var(--secondary-color);
-        padding: 1em 0;
-        font-size: 0.8em;
-      }
-
-      main.wrapper {
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px;
-        background-color: var(--secondary-color);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      picture.profile img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-      }
-
-      h1,
-      h2,
-      h3 {
-        color: var(--primary-color);
-      }
-    </style>
   </head>
   <body>
     <header>
-      <h1 class="page-header">
-        Biniyam Gebreyohannes - Aspiring Software Engineer
-      </h1>
+      <h1>Biniyam Gebreyohannes - Aspiring Software Engineer</h1>
       <nav class="topnav" id="myTopnav">
         <a href="index.html" class="active">Home</a>
         <a
@@ -82,14 +31,11 @@
     </header>
 
     <main class="wrapper">
-      <div class="content">
-        <div class="profile">
-          <img
-            src="/Users/biniyamfekedegebreyohannes/Documents/GitHub/portal/photo_5895281688722915372_y.jpg"
-            alt="Biniyam Gebreyohannes"
-          />
-        </div>
-      </div>
+      <picture class="profile">
+        <source media="(min-width: 1200px)" srcset="images/desktop1.jpg" />
+        <source media="(min-width: 501px)" srcset="images/tablet1.jpg" />
+        <img src="images/phone1.jpg" alt="That's me!" />
+      </picture>
       <h2 class="subheader">About Me</h2>
       <p>
         Hello, I'm Biniyam Gebreyohannes. I am currently honing my skills as a
@@ -103,11 +49,10 @@
       <h3>Education and Experience</h3>
       <p>
         I am a student at Year Up. During my studies, I completed diffrent
-        projects using python programing language, where I gained practical
-        experience in software development, team collaboration, and critical
-        thinking. I am continuously learning new technologies and methodologies
-        to improve my coding skills and stay current in this rapidly evolving
-        field.
+        projects, where I gained practical experience in software development,
+        team collaboration, and project management. I am continuously learning
+        new technologies and methodologies to improve my coding skills and stay
+        current in this rapidly evolving field.
       </p>
 
       <footer>
@@ -121,13 +66,16 @@
       </footer>
     </main>
 
+    <!-- Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon -->
     <script>
+      //https://tinyurl.com/dynamic-html-checker
       document
         .getElementById("html-checker")
         .setAttribute(
           "href",
           "https://validator.w3.org/nu/?doc=" + location.href
         );
+
       document
         .getElementById("css-checker")
         .setAttribute(
@@ -135,9 +83,12 @@
           "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href
         );
 
-      let thisYear = new Date().getFullYear();
+      //set current year in span with id of this-year
+      let d = new Date();
+      let thisYear = d.getFullYear();
       document.getElementById("this-year").innerHTML = thisYear;
 
+      //manages mobile nav
       function myFunction() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
